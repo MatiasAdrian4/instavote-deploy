@@ -1,0 +1,27 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageUpdateAutomation
+metadata:
+  annotations:
+    reconcile.fluxcd.io/requestedAt: "2026-03-06T16:59:16.175882-03:00"
+  name: instavote-all
+  namespace: flux-system
+spec:
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: Update image tag
+    push:
+      branch: main
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: instavote
+  update:
+    path: ./deploy/vote/staging
+    strategy: Setters
