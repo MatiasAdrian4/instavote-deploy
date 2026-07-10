@@ -5,7 +5,7 @@ metadata:
   annotations:
     reconcile.fluxcd.io/requestedAt: "2025-12-10T13:43:41.178637-03:00"
   name: instavote
-  namespace: flux-system
+  namespace: instavote
 spec:
   interval: 1h
   ref:
